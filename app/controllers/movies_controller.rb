@@ -7,6 +7,7 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
+    # @character = Character.find_by({ :movie_id => @movie.id})
 
     render("movies/show.html.erb")
   end
