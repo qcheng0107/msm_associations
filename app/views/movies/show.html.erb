@@ -21,12 +21,12 @@
       <dd><image src="<%= @movie.image_url %>"</dd>
 
       <dt>Director</dt>
-      <dd><a href="/directors/<%= @movie.director_id %>"><%= Director.movies.name %></a></dd>
+      <dd><a href="/directors/<%= @movie.director_id %>"><%= @movie.director.name %></a></dd>
       
       <dt>Character</dt>
       <dd>
-      <%= Character.movie.each do |character| %>
-        <li><a href="/actors/<%= Actor.characters.id %>"><%= Actor.characters.name %></a>(<%= character.name %>)</li>
+      <% @movie.characters.each do |character| %>
+        <li><a href="/actors/<%= character.movie.id %>"><%= character.actor.name %></a>(<%= character.name %>)</li>
       <% end %>
       </dd>
 
