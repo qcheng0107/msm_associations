@@ -26,7 +26,7 @@
       <dt>Character</dt>
       <dd>
       <%= Character.where(:movie_id => @movie.id).each do |character| %>
-        <li><a href="/characters/<%= character.id %>"><%= character.name %></a></li>
+        <li><a href="/actors/<%= Actor.find_by(:id => character.actor_id).id %>"><%= Actor.find_by(:id => character.actor_id).name %></a>(<%= character.name %>)</li>
       <% end %>
       </dd>
 
