@@ -34,11 +34,11 @@
   </div>
 </div>
 
-<ul>
-  <%= Movie.where(:director_id => @director.id).each do |movie| %>
+<dt>Filmography
+  <% @director.movies.each do |movie| %>
     <li><a href="/movies/<%= movie.id %>"><%= movie.title %></a></li>
   <% end %>
-</ul>
+</dt>
 
 <div class="page-header">
   <h3>Add Movie</h3>
@@ -46,7 +46,7 @@
 
 <div class="row">
   <div class="col-md-12">
-    <form action="/create_movie" method="post">
+    <form <form action="/create_movie" method="post">
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
